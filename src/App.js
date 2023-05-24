@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./componentes/Header";
+import Body from "./componentes/body";
+import styled from "@emotion/styled";
+import Footer from "./componentes/Footer";
+
+const Container = styled.div`  
+margin: -8px;
+  text-decoration: none;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  background: rgba(0, 18, 51, 0.56);
+`
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <Container>
+    <Header />
+    <Body />
+    <Footer />
+  </Container>
+    
   );
 }
 

@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import StyledHeader from "../Header"
 import { negro, azulPrimario } from "../UI/variables";
 import logo from "../../assets/logo.png";
+import { Link } from "react-router-dom";
 
 export const CajaFooter = styled.div`
     background-color: ${negro};
@@ -29,7 +30,7 @@ const Footer = () =>{
 
     return (
         <CajaFooter>
-        <LogoFooter src={logo} alt="aluraflix" />
+        <Link to="/" ><LogoFooter src={logo} alt="aluraflix" /></Link>
         <PFooter>Desarrollado por Cristian Fontanini</PFooter>
         </CajaFooter>
     )

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { negro, azulPrimario, gris3 } from "../UI/variables";
 import logo from "../../assets/logo.png";
 import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 
 
@@ -26,8 +27,8 @@ export const Loguito = styled.img`
 const Header = () => {
   return (
     <StyledHeader>
-      <Loguito src={logo} alt="aluraflix"/>
-      <Button variant="outlined" style={{ color: gris3 }} >Nuevo Video</Button>
+      <Link to="/" ><Loguito src={logo} alt="aluraflix"/> </Link>
+      <Link to="/agregarVideo"><Button variant="outlined" style={{ color: gris3 }} >Nuevo Video</Button></Link>
     </StyledHeader>
   );
 };

@@ -1,8 +1,10 @@
 import Header from "./componentes/Header";
 import styled from "@emotion/styled";
 import Footer from "./componentes/Footer";
-import { BrowserRouter as Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter as  Router, Route, Routes } from "react-router-dom";
 import Home from "./paginas/Home";
+
+import FormVideo from "./paginas/FormVideo";
 
 const Container = styled.div`  
 margin: -8px;
@@ -18,7 +20,9 @@ function App() {
     <Container>
       <Header />
       <Routes>
-        <Route path="*" element={ <Home/> } />
+        <Route path="/" element={ <Home/> } />
+        <Route path="/agregarVideo" element={ <FormVideo/> } />
+        
       </Routes>
       <Footer />
     </Container>

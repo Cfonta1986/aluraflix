@@ -12,13 +12,19 @@ export const TituloVideo = styled(Typography)`
     color: ${gris2} ;
 `
 
-const FormVideo = ()=> {
+const FormVideo = () => {
     return <Container>
-        <TituloVideo variant="h2">Nuevo video</TituloVideo>
-        <SeleccionaCategoria/> 
-        <InputTitulo/>
-        <SeleccionarColor/>
-        <InputTexto />
+        <form>
+        <TituloVideo sx={{ 
+            mb: 5
+         }}
+          variant="h2">Nuevo video</TituloVideo>
+        <InputTitulo required/>
+        <InputTitulo required/>
+        <InputTitulo required/>
+        <SeleccionaCategoria required /> 
+        <InputTexto required />
+        </form>
     </Container>
 }
 

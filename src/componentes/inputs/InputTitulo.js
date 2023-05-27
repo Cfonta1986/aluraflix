@@ -6,7 +6,8 @@ const InputTitulo = () => {
         <Box
           component="form"
           sx={{
-            '& > :not(style)': { m: 1, width: '25ch' },
+            m: 1,
+            width: 1
           }}
           noValidate
           autoComplete="off"

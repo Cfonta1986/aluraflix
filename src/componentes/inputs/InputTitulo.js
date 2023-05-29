@@ -1,19 +1,23 @@
+import styled from '@emotion/styled';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
+export const StyledBox = styled(Box)`
+  width: 95%;
+`
+
 const InputTitulo = () => {
     return (
-        <Box
+        <StyledBox
           component="form"
           sx={{
-            m: 1,
-            width: 1
+            m: 2,
           }}
           noValidate
           autoComplete="off"
         >
-          <TextField id="filled-basic" label="Filled" variant="filled" />
-        </Box>
+          <TextField fullWidth id="filled-basic" label="Filled" variant="filled"  />
+        </StyledBox>
       );
 }
 

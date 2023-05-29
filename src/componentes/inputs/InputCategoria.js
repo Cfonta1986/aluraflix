@@ -6,6 +6,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import styled from '@emotion/styled';
 import { gris2 } from '../UI/variables';
+import { StyledBox } from './InputTitulo';
 
 
 export const StyledInputLabel = styled(InputLabel)`
@@ -16,6 +17,7 @@ export const StyledSelect = styled(Select)`
   color: ${gris2};
 `
 
+
 export default function SeleccionaCategoria() {
   const [category, setCategory] = useState('');
 
@@ -24,7 +26,7 @@ export default function SeleccionaCategoria() {
   };
 
   return (
-    <Box sx={{ minWidth: 120,
+    <StyledBox sx={{ minWidth: 120, m: 2
     }}>
       <FormControl fullWidth>
         <StyledInputLabel id="demo-simple-select-label">Categoria</StyledInputLabel>
@@ -40,6 +42,6 @@ export default function SeleccionaCategoria() {
           <MenuItem value={30}>Innovación y Gestión</MenuItem>
         </StyledSelect>
       </FormControl>
-    </Box>
+    </StyledBox>
   );
 }

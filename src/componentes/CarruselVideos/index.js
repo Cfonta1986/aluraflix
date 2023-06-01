@@ -122,7 +122,7 @@ export const listaVideos = {
       "id": "658837c0-2Jjs-43cc-a1c2-8b5dd7ffd8ee"
     }
   ], 
-    categorias: [
+  categorias: [
       {
       "categoria": "Front-End",
       "descripcion": "Formacion Back End de Alura Latam.",
@@ -138,7 +138,7 @@ export const listaVideos = {
       "descripcion": "Formación Innovación y Gestión de Alura Latam",
       "id": "d175a9f8-609c-45c7-9273-6399427ec9cb"
     }
-    ],}
+  ],}
 
 const CarruselVideos = () => {
   
@@ -236,20 +236,3 @@ const CarruselVideos = () => {
 
 export default CarruselVideos;
 
-/*  return (
-    <div>
-      <h2>Lista de Categorías:</h2>
-      <ul>
-        {categorias.map((categoria) => (
-          <li key={categoria.id}>{categoria.categoria}</li>
-        ))}
-      </ul>
-    
-    <h2>Lista de Videos:</h2>
-    <ul>
-      {videos.map((video) => (
-        <li key={video.id}>{video.nombre} {video.link} </li>
-      ))}
-    </ul>
-  </div>
-  );   */

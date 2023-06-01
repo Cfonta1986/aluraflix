@@ -33,9 +33,9 @@ const FormVideo = () => {
         <InputTexto required />
         <InputTitulo required/>
         <div>
-            <BtnAceptar></BtnAceptar>
-            <BtnLimpiar></BtnLimpiar>
-            <BtnAceptar></BtnAceptar>
+            <BtnAceptar />
+            <BtnLimpiar />
+            <BtnAceptar />
         </div>
         </form>
     </StyledContainer>

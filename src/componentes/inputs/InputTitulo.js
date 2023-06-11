@@ -9,7 +9,7 @@ export const StyledBox = styled(Box)`
   background-color: #53585D;
 `
 
-const theme = createTheme({
+export const theme = createTheme({
   palette: {
     text: {
       primary: gris2,
@@ -17,15 +17,17 @@ const theme = createTheme({
   },
 });
 
-const InputTitulo = () => {
+const InputTitulo = (props) => {
+
+  const errores = props.errors[props.valor]
+  
     return (
       <ThemeProvider theme={theme}>
         <StyledBox
-          component="form"
+          
           sx={{
             m: 2,
           }}
-          noValidate
           autoComplete="off"
         >
           <TextField
@@ -34,7 +36,12 @@ const InputTitulo = () => {
           color: gris2,
         }}
         id="filled-basic"
-        label="Info a cargar"
+        label={props.valor}
+        type={props.type}
+        error={errores}
+        helperText={errores ? props.helperText : ''}
+
+        {...props.datos}
         variant="filled"
         InputLabelProps={{
           sx: { color: gris2 },

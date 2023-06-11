@@ -17,7 +17,7 @@ export const StyledSelect = styled(Select)`
 `
 
 
-export default function SeleccionaCategoria() {
+export default function SeleccionaCategoria(props) {
   const [category, setCategory] = useState('');
 
   const handleChange = (event) => {
@@ -34,6 +34,7 @@ export default function SeleccionaCategoria() {
           id="demo-simple-select"
           value={category}
           label="category"
+          {...props.datos}
           onChange={handleChange}
         >
           <MenuItem value={10}>Front End</MenuItem>

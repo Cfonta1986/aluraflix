@@ -10,7 +10,7 @@ export default function App() {
     <form onSubmit={handleSubmit(onSubmit)}>
       <input type="text" placeholder="Titulo" {...register("Titulo", {required: true, min: 3, maxLength: 80})} />
       <input type="url" placeholder="Link del Video" {...register("Link del Video", {required: true, maxLength: 100})} />
-      <input type="url" placeholder="Link de la Imagen del Video" {...register("Link de la Imagen del Video", {, pattern: /^\S+@\S+$/i})} />
+      <input type="url" placeholder="Link de la Imagen del Video" {...register("Link de la Imagen del Video", {pattern: /^\S+@\S+$/i})} />
       <select {...register("Categoria", { required: true })}>
         <option value="Front End">Front End</option>
         <option value=" Back End"> Back End</option>

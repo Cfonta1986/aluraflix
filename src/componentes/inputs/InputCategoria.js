@@ -37,9 +37,9 @@ export default function SeleccionaCategoria(props) {
           {...props.datos}
           onChange={handleChange}
         >
-          <MenuItem value={10}>Front End</MenuItem>
-          <MenuItem value={20}>Back End</MenuItem>
-          <MenuItem value={30}>Innovación y Gestión</MenuItem>
+          <MenuItem value={"Front End"}>Front End</MenuItem>
+          <MenuItem value={"Back End"}>Back End</MenuItem>
+          <MenuItem value={"Innovación y Gestión"}>Innovación y Gestión</MenuItem>
         </StyledSelect>
       </FormControl>
     </StyledBox>

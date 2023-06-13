@@ -4,6 +4,9 @@ import { gris2 } from "../UI/variables";
 
 
 const InputTexto = (props) => {
+
+  const errores = props.errors[props.valor]
+
     return <ThemeProvider theme={theme}>
     <StyledBox 
     sx={{
@@ -13,7 +16,11 @@ const InputTexto = (props) => {
           color: gris2,
         }} id="outlined-basic" label={props.valor} {...props.datos} InputLabelProps={{
           sx: { color: gris2 },
-        }} variant="outlined" multiline />
+        }} variant="outlined" 
+        multiline
+        error={errores}
+        helperText={errores ? props.helperText : ''} 
+        />
     </StyledBox>
     </ThemeProvider>
   }

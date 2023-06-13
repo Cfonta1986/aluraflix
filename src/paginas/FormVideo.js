@@ -20,9 +20,19 @@ export const StyledContainer = styled(Container)`
   flex-direction: column;
 `;
 
+export const DivBotoncitos = styled.div`
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5rem;
+`
+
+export const DivBotones = styled.div`
+  display: flex;
+`
+
 const FormVideo = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
+  const onSubmit = data => localStorage.setItem('nuevoVideo', JSON.stringify(data));
 
 
   return (
@@ -34,12 +44,14 @@ const FormVideo = () => {
         <InputTitulo valor="Link imagen del video" helperText="Introduzca un link válido" type="url" datos={register('Link de la Imagen del Video', { required: true, maxLength: 100 })} errors={errors} />
         <SeleccionaCategoria datos={register('Categoria', { required: true })} errors={errors} />
         <InputTexto valor="Descripción" helperText="Mínimo de 3 caracteres" datos={register('Descripción', { required: true, minLength: 3 })} errors={errors} />
-        <InputTitulo valor="Código de seguridad" helperText="Introduzca un código válido" datos={register('Código de Seguridad', { required: true, pattern: /Fonta/ })} errors={errors} />
-        <div>
+        <InputTitulo valor="Código de seguridad" type="password" helperText="Introduzca un código válido" datos={register('Código de Seguridad', { required: true, pattern: /Fonta/ })} errors={errors} />
+        <DivBotoncitos>
+          <DivBotones>
           <BtnAceptar valor="Titulo" tipo="submit" />
           <BtnLimpiar />
+          </DivBotones>
           <BtnAceptar />
-        </div>
+        </DivBotoncitos>
       </form>
     </StyledContainer>
   );

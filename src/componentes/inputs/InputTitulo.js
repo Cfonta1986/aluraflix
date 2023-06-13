@@ -40,7 +40,6 @@ const InputTitulo = (props) => {
         type={props.type}
         error={errores}
         helperText={errores ? props.helperText : ''}
-
         {...props.datos}
         variant="filled"
         InputLabelProps={{

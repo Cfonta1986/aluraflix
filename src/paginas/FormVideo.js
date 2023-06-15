@@ -32,7 +32,7 @@ export const DivBotones = styled.div`
 
 const FormVideo = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = data => localStorage.setItem('nuevoVideo', JSON.stringify(data));
+  const onSubmit = data => localStorage.setItem('videos', JSON.stringify(data));
 
 
   return (
@@ -47,10 +47,10 @@ const FormVideo = () => {
         <InputTitulo valor="Código de seguridad" type="password" helperText="Introduzca un código válido" datos={register('Código de Seguridad', { required: true, pattern: /Fonta/ })} errors={errors} />
         <DivBotoncitos>
           <DivBotones>
-          <BtnAceptar valor="Titulo" tipo="submit" />
+          <BtnAceptar nombre="Aceptar" valor="Titulo" tipo="submit" />
           <BtnLimpiar />
           </DivBotones>
-          <BtnAceptar />
+          <BtnAceptar nombre="Nueva Categoria" />
         </DivBotoncitos>
       </form>
     </StyledContainer>

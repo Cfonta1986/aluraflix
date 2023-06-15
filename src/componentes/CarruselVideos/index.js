@@ -140,7 +140,22 @@ export const listaVideos = {
     }
   ],}
 
+
+export const listaVideosEnLocal = () => {
+  if (localStorage.getItem("videosLocal")){
+    return JSON.parse(localStorage.getItem("videosLocal"));
+  } else{
+    return localStorage.setItem ("videosLocal", JSON.stringify(listaVideos));
+  }
+}
+
+export const limpiarLocalStorage = () => {
+  return localStorage.clear();
+}
+
 const CarruselVideos = () => {
+
+  listaVideosEnLocal();
   
   const [categorias, setCategorias] = useState([]);
   const [videos, setVideos] = useState([]);

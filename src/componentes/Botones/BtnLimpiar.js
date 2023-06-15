@@ -1,9 +1,14 @@
 import { Button } from "@mui/material";
 
+
 const BtnLimpiar = () =>{
     const limpiarInputs = () => {window.location.reload()};
 
-    return <Button variant="outlined" onClick={limpiarInputs} >Limpiar</Button>
+    const buttonStyle = {
+        marginLeft: '1rem',
+      };
+
+    return <Button variant="outlined" style={buttonStyle} onClick={limpiarInputs} >Limpiar</Button>
 }
 
 export default BtnLimpiar

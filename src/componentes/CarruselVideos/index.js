@@ -228,7 +228,7 @@ const CarruselVideos = () => {
       <>
         {categorias.map((categoria) => (
         <CajaVideo key={categoria.id}>
-          <BtnGaleria variant="contained" >{categoria.categoria}</BtnGaleria>
+          <BtnGaleria key= {categoria.id} variant="contained" >{categoria.categoria}</BtnGaleria>
           <Slider {...settings} >
           {videos
               .filter((video) => video.categoria === categoria.categoria)

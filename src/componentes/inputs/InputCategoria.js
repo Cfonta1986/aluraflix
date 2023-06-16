@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -24,6 +24,23 @@ export default function SeleccionaCategoria(props) {
     setCategory(event.target.value);
   };
 
+  const videosEnLocalStorage = JSON.parse(localStorage.getItem("videosLocal"));
+
+  const [categorias, setCategorias] = useState([]);
+
+  const generarListaCategorias = () => {
+    const listaCategorias = videosEnLocalStorage.categorias.map((categoria) =>({
+      categoria: categoria.categoria,
+      descripcion: categoria.descripcion,
+      id: categoria.id
+    }));
+    setCategorias(listaCategorias);
+  };
+
+  useEffect(() => {
+    generarListaCategorias();
+  }, []);
+
   return (
     <StyledBox sx={{ minWidth: 120, m: 2
     }}>
@@ -37,9 +54,9 @@ export default function SeleccionaCategoria(props) {
           {...props.datos}
           onChange={handleChange}
         >
-          <MenuItem value={"Front-End"}>Front End</MenuItem>
-          <MenuItem value={"Back-End"}>Back End</MenuItem>
-          <MenuItem value={"Innovación y Gestión"}>Innovación y Gestión</MenuItem>
+        {categorias.map((categoria) => (
+          <MenuItem key= {categoria.id} value= {categoria.categoria}>{categoria.categoria} </MenuItem>
+        ))}
         </StyledSelect>
       </FormControl>
     </StyledBox>

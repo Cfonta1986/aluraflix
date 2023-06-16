@@ -156,13 +156,15 @@ export const limpiarLocalStorage = () => {
 const CarruselVideos = () => {
 
   listaVideosEnLocal();
+
+  const videosEnLocalStorage = JSON.parse(localStorage.getItem("videosLocal"));
   
   const [categorias, setCategorias] = useState([]);
   const [videos, setVideos] = useState([]);
 
 
   const generarListaCategorias = () => {
-    const listaCategorias = listaVideos.categorias.map((categoria) =>({
+    const listaCategorias = videosEnLocalStorage.categorias.map((categoria) =>({
       categoria: categoria.categoria,
       descripcion: categoria.descripcion,
       id: categoria.id
@@ -175,7 +177,7 @@ const CarruselVideos = () => {
   }, []);
 
   const generarListaVideos = () => {
-    const listaVideitos = listaVideos.videos.map((video) => ({
+    const listaVideitos = videosEnLocalStorage.videos.map((video) => ({
       nombre: video.nombre,
       link: video.link,
       id: video.id,

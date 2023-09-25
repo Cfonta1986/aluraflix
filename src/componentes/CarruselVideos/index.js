@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
 import Slider from "react-slick";
 import styled from "@emotion/styled";
 import { Button } from "@mui/material";
@@ -6,7 +6,6 @@ import ReactPlayer from "react-player";
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { celeste } from "../UI/variables.js";
-
 
 
 
@@ -162,8 +161,8 @@ const CarruselVideos = () => {
   const [categorias, setCategorias] = useState([]);
   const [videos, setVideos] = useState([]);
 
-
-  const generarListaCategorias = () => {
+  useEffect(() => {
+    const generarListaCategorias = () => {
     const listaCategorias = videosEnLocalStorage.categorias.map((categoria) =>({
       categoria: categoria.categoria,
       descripcion: categoria.descripcion,
@@ -171,12 +170,11 @@ const CarruselVideos = () => {
     }));
     setCategorias(listaCategorias);
   };
-
-  useEffect(() => {
     generarListaCategorias();
   }, []);
 
-  const generarListaVideos = () => {
+  useEffect(() => {
+    const generarListaVideos = () => {
     const listaVideitos = videosEnLocalStorage.videos.map((video) => ({
       nombre: video.nombre,
       link: video.link,
@@ -185,8 +183,6 @@ const CarruselVideos = () => {
     }));
     setVideos(listaVideitos);
   };
-
-  useEffect(() => {
     generarListaVideos();
   }, []);
 

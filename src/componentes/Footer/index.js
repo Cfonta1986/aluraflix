@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "@emotion/styled";
-import StyledHeader from "../Header"
 import { negro, azulPrimario } from "../UI/variables";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
